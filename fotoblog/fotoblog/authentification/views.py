@@ -20,7 +20,7 @@ def login_page(request):
             )
             if user is not None:
                 login(request, user)
-                message = f'Hello, {user.username}! You are connected.'
+                return redirect('home')
             else:
                 message = 'Username or password incorrect.'
     return render(request, 'authentification/login.html', context={'form': form, 'message': message})
