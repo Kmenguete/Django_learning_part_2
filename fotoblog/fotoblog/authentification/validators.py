@@ -8,3 +8,12 @@ class ContainsLetterValidator:
 
     def get_help_text(self):
         return 'Your password should contain at least one upper case or lower case letter.'
+
+
+class ContainsDigitValidator:
+    def validate(self, password, user=None):
+        if not any(character.isdigit() for character in password):
+            raise ValidationError('The password should contain a letter', code='password_no_digits')
+
+    def get_help_text(self):
+        return 'Your password should contain at least one digit.'
