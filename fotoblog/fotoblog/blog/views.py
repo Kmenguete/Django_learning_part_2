@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from . import forms
+from . import models, forms
 
 
 @login_required()
 def home(request):
-    return render(request, 'blog/home.html')
+    photos = models.Photo.objects.all()
+    return render(request, 'blog/home.html', context={'photo': photos})
 
 
 @login_required()
