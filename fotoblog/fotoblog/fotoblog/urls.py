@@ -27,6 +27,7 @@ urlpatterns = [
     path('logout/', authentification.views.logout_user, name='logout'),
     path('home/', blog.views.home, name='home'),
     path('signup/', authentification.views.signup_page, name='signup'),
+    path('photo/upload/', blog.views.photo_upload, name='photo_upload')
 ]
 if settings.DEBUG:
     urlpatterns += static(
