@@ -6,7 +6,7 @@ from . import forms, models
 @login_required()
 def home(request):
     photos = models.Photo.objects.all()
-    return render(request, 'blog/home.html', context={'photo': photos})
+    return render(request, 'blog/home.html', context={'photos': photos})
 
 
 @login_required()
